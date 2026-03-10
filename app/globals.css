@@ -234,3 +234,8 @@ body {
 @media (min-width: 769px) {
   .mobile-toggle { display: none !important; }
 }
+
+@media (max-width: 768px) {
+  .foot-grid { grid-template-columns: 1fr !important; text-align: center !important; }
+  .foot-grid > div { align-items: center !important; }
+}

@@ -18,16 +18,20 @@ npm start
 
 ## Déploiement sur Vercel
 
-1. Créez un dépôt sur GitHub : [github.com/new](https://github.com/new) — nommez-le `coiffure-cristina` ou `christina-coiffure`
-2. Poussez le code :
-   ```bash
-   git remote add origin https://github.com/VOTRE_USERNAME/coiffure-cristina.git
-   git push -u origin main
-   ```
-3. Déployez sur [vercel.com](https://vercel.com) :
-   - Importez le dépôt GitHub
-   - Vercel détectera automatiquement Next.js
-   - Cliquez sur Deploy
+Le dépôt GitHub est déjà créé : **[github.com/ZyptaAgency/coiffure-cristina](https://github.com/ZyptaAgency/coiffure-cristina)**
+
+Pour déployer sur Vercel :
+
+1. Allez sur [vercel.com](https://vercel.com) et connectez-vous
+2. Cliquez sur **Add New** → **Project**
+3. Importez le dépôt `ZyptaAgency/coiffure-cristina`
+4. Vercel détectera automatiquement Next.js — cliquez sur **Deploy**
+
+Ou via la CLI :
+```bash
+npx vercel login   # une seule fois
+npx vercel         # déploiement
+```
 
 ---
 

@@ -808,31 +808,17 @@ export default function ChristinaCoiffure() {
             </div>
 
             <div className={revealClass("contact", 2)}>
-              <div
-                style={{
-                  borderRadius: 24,
-                  overflow: "hidden",
-                  height: 380,
-                  background: `linear-gradient(135deg, ${COLORS.mintLight}44, ${COLORS.beige}44)`,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  flexDirection: "column",
-                  gap: 16,
-                  border: `1px solid ${COLORS.mintLight}33`,
-                }}
-              >
-                <div style={{ fontSize: 48, opacity: 0.4 }}>🗺️</div>
-                <p style={{ fontSize: 13, color: COLORS.textLight, letterSpacing: 1, fontWeight: 300 }}>
-                  Carte intégrée ici
-                </p>
-                <button
-                  className="btn-book"
-                  style={{ padding: "12px 28px", fontSize: 12 }}
-                  onClick={() => window.open("https://www.google.com/maps/search/Neuch%C3%A2tel+Suisse", "_blank")}
-                >
-                  <span>Voir sur Google Maps</span>
-                </button>
+              <div style={{ borderRadius: 24, overflow: "hidden", height: 380 }}>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d43269.2!2d6.9319!3d46.9928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478e8e1e1e1e1e1e%3A0x0!2sNeuch%C3%A2tel!5e0!3m2!1sfr!2sch!4v1"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, borderRadius: 24 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Localisation Christina Coiffure — Neuchâtel"
+                />
               </div>
             </div>
           </div>
@@ -842,61 +828,102 @@ export default function ChristinaCoiffure() {
       {/* ═══ FOOTER ═══ */}
       <footer
         style={{
-          padding: "60px 24px 40px",
-          background: COLORS.text,
+          padding: "72px 24px 40px",
+          background: "#2C2C2C",
           color: "rgba(255,255,255,0.5)",
-          textAlign: "center",
+          position: "relative",
         }}
       >
-        <div style={{ maxWidth: 600, margin: "0 auto" }}>
-          <LogoMark size={44} />
-          <p
+        <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 1, background: `linear-gradient(90deg, transparent, ${COLORS.mint}44, transparent)` }} />
+
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <div
+            className="foot-grid"
             style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: 24,
-              fontWeight: 300,
-              fontStyle: "italic",
-              color: "rgba(255,255,255,0.8)",
-              margin: "20px 0 8px",
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+              gap: 40,
+              marginBottom: 56,
             }}
           >
-            Christina Coiffure
-          </p>
-          <p style={{ fontSize: 12, letterSpacing: 2, marginBottom: 40, fontWeight: 300 }}>
-            Neuchâtel, Suisse
-          </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+              <LogoMark size={44} />
+              <div>
+                <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 22, fontWeight: 300, fontStyle: "italic", color: "rgba(255,255,255,0.85)" }}>
+                  Christina Coiffure
+                </p>
+                <p style={{ fontSize: 12, letterSpacing: 2, color: "rgba(255,255,255,0.35)", fontWeight: 300, marginTop: 4 }}>
+                  L&apos;art de sublimer votre beauté
+                </p>
+              </div>
+            </div>
 
-          <div
-            style={{
-              width: 60,
-              height: 1,
-              background: "rgba(255,255,255,0.1)",
-              margin: "0 auto 32px",
-            }}
-          />
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              <p style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: COLORS.mint, fontWeight: 500, marginBottom: 4 }}>
+                Navigation
+              </p>
+              {[["Galerie", "gallery"], ["Équipe", "team"], ["Rendez-vous", "booking"], ["Contact", "contact"]].map(([label, id]) => (
+                <span key={id} className="nav-link" onClick={() => scrollTo(id)} style={{ fontSize: 13, fontWeight: 300, color: "rgba(255,255,255,0.4)", cursor: "pointer" }}>
+                  {label}
+                </span>
+              ))}
+            </div>
 
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, marginBottom: 12 }}>
-            <span style={{ fontSize: 11, letterSpacing: 1, fontWeight: 300 }}>Développé par</span>
-            <span
-              style={{
-                fontFamily: "'Josefin Sans', sans-serif",
-                fontSize: 14,
-                fontWeight: 500,
-                letterSpacing: 6,
-                textTransform: "uppercase",
-                color: "rgba(255,255,255,0.7)",
-                background: "linear-gradient(90deg, #c84bff, #ff6b35)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
-              Zypta
-            </span>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              <p style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: COLORS.mint, fontWeight: 500, marginBottom: 4 }}>
+                Horaires
+              </p>
+              <p style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", fontWeight: 300, lineHeight: 1.8 }}>
+                Lundi – Vendredi<br /><span style={{ color: "rgba(255,255,255,0.65)" }}>9h00 – 18h00</span>
+              </p>
+              <p style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", fontWeight: 300, lineHeight: 1.8 }}>
+                Samedi<br /><span style={{ color: "rgba(255,255,255,0.65)" }}>9h00 – 16h00</span>
+              </p>
+              <p style={{ fontSize: 13, color: "rgba(255,255,255,0.35)", fontWeight: 300 }}>Dimanche — Fermé</p>
+            </div>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              <p style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: COLORS.mint, fontWeight: 500, marginBottom: 4 }}>
+                Contact
+              </p>
+              <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", fontWeight: 300, lineHeight: 1.7 }}>
+                +41 32 123 45 67<br />info@christinacoiffure.ch
+              </p>
+              <div style={{ display: "flex", gap: 16, marginTop: 8 }}>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style={{ color: "rgba(255,255,255,0.4)", transition: "color 0.3s ease" }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="5" /><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" /></svg>
+                </a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style={{ color: "rgba(255,255,255,0.4)", transition: "color 0.3s ease" }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" /></svg>
+                </a>
+              </div>
+            </div>
           </div>
 
-          <p style={{ fontSize: 11, fontWeight: 300, letterSpacing: 1, opacity: 0.4 }}>
-            © 2026 Christina Coiffure · Tous droits réservés
-          </p>
+          <div style={{ width: "100%", height: 1, background: "rgba(255,255,255,0.06)", marginBottom: 28 }} />
+
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16 }}>
+            <p style={{ fontSize: 11, fontWeight: 300, letterSpacing: 1, color: "rgba(255,255,255,0.25)" }}>
+              © 2026 Christina Coiffure · Tous droits réservés
+            </p>
+            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+              <span style={{ fontSize: 10, letterSpacing: 1.5, color: "rgba(255,255,255,0.25)", fontWeight: 300 }}>Développé par</span>
+              <span
+                style={{
+                  fontFamily: "'Josefin Sans', sans-serif",
+                  fontSize: 14,
+                  fontWeight: 500,
+                  letterSpacing: 4,
+                  textTransform: "uppercase",
+                  background: "linear-gradient(135deg, #c84bff, #ff6b35)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
+                Zypta
+              </span>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
