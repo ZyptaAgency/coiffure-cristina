@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { CursorGlow, FloatingBubbles } from "./AnimationComponents";
 
 /* ─────────────────────────────────────────────
-   Christina Coiffure — Neuchâtel, Suisse
+   Cristina Coiffure — Neuchâtel, Suisse
    Palette: Mint #9DB8A5 · Beige #D4C5B2 · Cream #F5F0EA · Warm White #FDFBF7
    Développé par Zypta
    ───────────────────────────────────────────── */
@@ -137,7 +138,7 @@ const SectionTitle = ({ subtitle, title, light = false }: { subtitle: string; ti
 );
 
 /* ── Main Component ── */
-export default function ChristinaCoiffure() {
+export default function CristinaCoiffure() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedDate, setSelectedDate] = useState<number | null>(null);
   const [selectedTime, setSelectedTime] = useState<number | null>(null);
@@ -213,7 +214,9 @@ export default function ChristinaCoiffure() {
   };
 
   return (
-    <div className="christina-page" style={{ background: COLORS.warmWhite, minHeight: "100vh" }}>
+    <div className="christina-page" style={{ background: COLORS.warmWhite, minHeight: "100vh", position: "relative" }}>
+      <FloatingBubbles count={18} />
+      <CursorGlow />
       {/* ═══ HEADER ═══ */}
       <header
         style={{
@@ -245,7 +248,7 @@ export default function ChristinaCoiffure() {
                 transition: "font-size 0.4s ease",
               }}
             >
-              Christina
+              Cristina
             </div>
             <div
               style={{
@@ -406,7 +409,7 @@ export default function ChristinaCoiffure() {
               animation: "fadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both",
             }}
           >
-            Christina
+            Cristina
           </h1>
           <p
             style={{
@@ -575,9 +578,9 @@ export default function ChristinaCoiffure() {
           >
             {[
               {
-                name: "Christina",
+                name: "Cristina",
                 role: "Fondatrice & Coiffeuse",
-                desc: "Passionnée par la coiffure depuis plus de 15 ans, Christina met son expertise et sa créativité au service de votre style unique.",
+                desc: "Passionnée par la coiffure depuis plus de 15 ans, Cristina met son expertise et sa créativité au service de votre style unique.",
                 img: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=400&h=500&fit=crop&crop=face",
               },
               {
@@ -782,7 +785,7 @@ export default function ChristinaCoiffure() {
                   { icon: "📍", label: "Adresse", value: "Rue du Seyon 12\n2000 Neuchâtel" },
                   { icon: "📞", label: "Téléphone", value: "+41 32 123 45 67" },
                   { icon: "🕐", label: "Horaires", value: "Lun-Ven : 9h-18h\nSam : 9h-16h\nDim : Fermé" },
-                  { icon: "✉️", label: "Email", value: "info@christinacoiffure.ch" },
+                  { icon: "✉️", label: "Email", value: "info@cristinacoiffure.ch" },
                 ].map((item, i) => (
                   <div
                     key={i}
@@ -817,7 +820,7 @@ export default function ChristinaCoiffure() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Localisation Christina Coiffure — Neuchâtel"
+                  title="Localisation Cristina Coiffure — Neuchâtel"
                 />
               </div>
             </div>
@@ -850,7 +853,7 @@ export default function ChristinaCoiffure() {
               <LogoMark size={44} />
               <div>
                 <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 22, fontWeight: 300, fontStyle: "italic", color: "rgba(255,255,255,0.85)" }}>
-                  Christina Coiffure
+                  Cristina Coiffure
                 </p>
                 <p style={{ fontSize: 12, letterSpacing: 2, color: "rgba(255,255,255,0.35)", fontWeight: 300, marginTop: 4 }}>
                   L&apos;art de sublimer votre beauté
@@ -887,14 +890,23 @@ export default function ChristinaCoiffure() {
                 Contact
               </p>
               <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", fontWeight: 300, lineHeight: 1.7 }}>
-                +41 32 123 45 67<br />info@christinacoiffure.ch
+                +41 32 123 45 67<br />info@cristinacoiffure.ch
               </p>
               <div style={{ display: "flex", gap: 16, marginTop: 8 }}>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style={{ color: "rgba(255,255,255,0.4)", transition: "color 0.3s ease" }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="5" /><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" /></svg>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style={{ transition: "opacity 0.3s ease" }} onMouseOver={(e) => { e.currentTarget.style.opacity = "1"; }} onMouseOut={(e) => { e.currentTarget.style.opacity = "0.9"; }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#ig-gradient)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <defs>
+                      <linearGradient id="ig-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#833AB4" />
+                        <stop offset="50%" stopColor="#FD1D1D" />
+                        <stop offset="100%" stopColor="#F77737" />
+                      </linearGradient>
+                    </defs>
+                    <rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="5" /><circle cx="17.5" cy="6.5" r="1.5" fill="url(#ig-gradient)" stroke="none" />
+                  </svg>
                 </a>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style={{ color: "rgba(255,255,255,0.4)", transition: "color 0.3s ease" }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" /></svg>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style={{ color: "#1877F2", transition: "opacity 0.3s ease" }} onMouseOver={(e) => { e.currentTarget.style.opacity = "1"; }} onMouseOut={(e) => { e.currentTarget.style.opacity = "0.9"; }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" /></svg>
                 </a>
               </div>
             </div>
@@ -904,18 +916,19 @@ export default function ChristinaCoiffure() {
 
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16 }}>
             <p style={{ fontSize: 11, fontWeight: 300, letterSpacing: 1, color: "rgba(255,255,255,0.25)" }}>
-              © 2026 Christina Coiffure · Tous droits réservés
+              © 2026 Cristina Coiffure · Tous droits réservés
             </p>
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
               <span style={{ fontSize: 10, letterSpacing: 1.5, color: "rgba(255,255,255,0.25)", fontWeight: 300 }}>Développé par</span>
               <span
                 style={{
-                  fontFamily: "'Josefin Sans', sans-serif",
+                  fontFamily: "'Ethnocentric Rg', 'Ethnocentric', sans-serif",
                   fontSize: 14,
-                  fontWeight: 500,
+                  fontStyle: "italic",
                   letterSpacing: 4,
                   textTransform: "uppercase",
                   background: "linear-gradient(135deg, #c84bff, #ff6b35)",
+                  backgroundSize: "200% auto",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}

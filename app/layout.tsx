@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Christina Coiffure — Salon de coiffure à Neuchâtel",
+  title: "Cristina Coiffure — Salon de coiffure à Neuchâtel",
   description:
     "L'art de sublimer votre beauté naturelle. Salon de coiffure à Neuchâtel, Suisse. Coupe, coloration, mèches, brushing et soins.",
   icons: {
@@ -17,6 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
+      <head>
+        <link href="https://fonts.cdnfonts.com/css/ethnocentric" rel="stylesheet" />
+      </head>
       <body>{children}</body>
     </html>
   );

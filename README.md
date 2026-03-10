@@ -1,6 +1,6 @@
-# Christina Coiffure — Neuchâtel, Suisse
+# Cristina Coiffure — Neuchâtel, Suisse
 
-Site vitrine du salon de coiffure Christina à Neuchâtel.
+Site vitrine du salon de coiffure Cristina à Neuchâtel.
 
 ## Développement
 
