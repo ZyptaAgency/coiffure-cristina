@@ -30,6 +30,16 @@ body {
 
 .christina-page a { text-decoration: none; color: inherit; }
 
+.zypta-supernova {
+  font-family: 'Ethnocentric Rg', sans-serif;
+  background: linear-gradient(135deg, #ff6b35, #c84bff, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }

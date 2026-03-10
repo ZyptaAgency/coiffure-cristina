@@ -918,23 +918,11 @@ export default function CristinaCoiffure() {
             <p style={{ fontSize: 11, fontWeight: 300, letterSpacing: 1, color: "rgba(255,255,255,0.25)" }}>
               © 2026 Cristina Coiffure · Tous droits réservés
             </p>
-            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-              <span style={{ fontSize: 10, letterSpacing: 1.5, color: "rgba(255,255,255,0.25)", fontWeight: 300 }}>Développé par</span>
-              <span
-                style={{
-                  fontFamily: "'Ethnocentric Rg', 'Ethnocentric', sans-serif",
-                  fontSize: 14,
-                  fontStyle: "italic",
-                  letterSpacing: 4,
-                  textTransform: "uppercase",
-                  background: "linear-gradient(135deg, #c84bff, #ff6b35)",
-                  backgroundSize: "200% auto",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
-              >
-                Zypta
-              </span>
+            <div style={{ fontSize: 11, color: "rgba(255,255,255,0.35)", letterSpacing: 0.5 }}>
+              Développé par{" "}
+              <a href="https://zypta.be" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit" }}>
+                <span className="zypta-supernova" style={{ fontWeight: 600 }}>Zypta</span>.be
+              </a>
             </div>
           </div>
         </div>
